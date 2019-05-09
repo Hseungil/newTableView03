@@ -36,7 +36,18 @@ class ViewController: UIViewController,UITableViewDataSource, UITableViewDelegat
         
         return myCell
     }
-
-
+//      ADD View Controller 클래스로 데이터 넘기기
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "GoAdd" {
+            let addVC = segue.destination as! AddViewController
+          //  addVC.testData = self.title
+            addVC.NameTest = animals[0]
+            addVC.ImgData = "Cat"
+            addVC.nameData = detallAnimals[0]
+    } else if segue.identifier == "GoDetail" {
+    
+    } else {
+            print("sqgue error")
+        }
+     }
 }
-
